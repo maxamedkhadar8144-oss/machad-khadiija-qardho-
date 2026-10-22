@@ -1,0 +1,8 @@
+{
+  "name": "Remix Machadka Khadiija Bintu Khuwaylid SMS",
+  "description": "Comprehensive School Management System for Machadka Khadiija Bintu Khuwaylid – Qardho, featuring student records, academics, examinations, fee billing, payroll, timetable, and reporting.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

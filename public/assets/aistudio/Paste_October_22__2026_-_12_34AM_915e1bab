@@ -1,0 +1,1000 @@
+# MASTER PROMPT: COMPLETE SCHOOL MANAGEMENT SYSTEM WEB APPLICATION
+
+## 1. PROJECT OVERVIEW
+
+Act as a senior full-stack software engineer, database architect, UI/UX designer, security engineer, and QA tester.
+
+Build a complete, production-oriented School Management System Web Application inspired by the dashboard structure and administrative modules of SEC LMS:
+
+https://sec.lms.so/#/dashboard
+
+Use the reference only as inspiration for the administrative workflow and module organization. Create an original, modern interface with more comprehensive functionality, better usability, and a consistent institutional brand identity.
+
+**Institution Name:** Machadka Khadiija Bintu Khuwaylid – Qardho
+
+**Academic Year:** Configurable, initially 2026–2027.
+
+**Application Type:** Full-stack responsive web application.
+
+**Primary Goal:** Manage students, teachers, classes, attendance, examinations, results, fees, finances, employees, communication, timetables, reports, and system settings from one centralized platform.
+
+This must be a real working application, not a static dashboard, UI mockup, prototype, or collection of nonfunctional buttons.
+
+## 2. TECHNOLOGY STACK
+
+Use the following stack unless the existing project already uses a compatible stack. If continuing an existing project, inspect and preserve its current architecture where practical.
+
+- Backend: PHP 8.2+ with organized, reusable application services.
+- Database: MySQL 8+ using PDO and prepared statements.
+- Frontend: HTML5, CSS3, JavaScript, Bootstrap 5, and Chart.js.
+- Icons: Bootstrap Icons or another consistent icon library.
+- Architecture: Modular MVC-style structure with separation of concerns.
+- Local development: XAMPP on Windows.
+- Database setup: Include a complete SQL schema and seed data.
+- Production deployment: Provide configuration and deployment instructions.
+
+Use a consistent routing strategy, reusable components, input validation, error handling, and database transactions for critical operations.
+
+Do not create a frontend-only simulation. Every important feature must connect to the backend and database.
+
+## 3. BRAND IDENTITY AND DESIGN SYSTEM
+
+Use the institutional brand colors extracted approximately from the previously supplied logo:
+
+- Primary Deep Teal: #006B68
+- Secondary Golden Yellow: #FFA900
+- White: #FFFFFF
+- Light Gray: #F5F7F7
+
+Color usage:
+
+- Deep teal: sidebar, navigation, primary actions, active states, and branding.
+- Golden yellow: selected highlights, important accents, and secondary actions.
+- White: cards, forms, dialogs, and content surfaces.
+- Light gray: page backgrounds, table backgrounds, and subtle separation.
+- Red: destructive actions and errors.
+- Green: successful operations and positive statuses.
+
+Do not use excessive gradients, oversized decorative elements, or inconsistent colors.
+
+### Interface requirements
+
+Create a polished administrative dashboard featuring:
+
+- Collapsible left sidebar.
+- Institutional logo and name.
+- Top navigation bar.
+- Search field.
+- Notification center.
+- User profile menu.
+- Breadcrumb navigation.
+- Responsive content area.
+- Metric cards.
+- Interactive charts.
+- Data tables with pagination.
+- Reusable forms and modal dialogs.
+- Toast notifications.
+- Confirmation dialogs for destructive actions.
+- Loading indicators and empty states.
+- Light and dark themes.
+- Responsive layouts for desktop, tablet, and mobile.
+
+Provide a central branding configuration so an administrator can update the logo, institution name, theme colors, and other visual settings without editing source code.
+
+Use the actual supplied logo when available. Never invent or substitute a different institutional logo without authorization.
+
+## 4. AUTHENTICATION AND USER ROLES
+
+Implement a secure authentication system with:
+
+- Login and logout.
+- Password hashing.
+- Forgot-password and reset-password workflow.
+- Session expiration and secure session management.
+- Change password.
+- Account activation and deactivation.
+- User profile management.
+- Optional two-factor authentication.
+- Login history.
+- Failed-login protection.
+- Role-based access control.
+- Permission management.
+
+Create the following roles:
+
+1. Super Admin
+2. Administrator
+3. Academic Manager
+4. Accountant
+5. Teacher
+6. HR Manager
+7. Receptionist
+8. Student
+9. Parent or Guardian
+
+Permissions must be configurable by module and action:
+
+- View
+- Create
+- Edit
+- Delete
+- Approve
+- Export
+- Print
+- Manage settings
+
+Enforce permissions on the server for every protected operation. Hiding a button in the frontend is not sufficient authorization.
+
+The Super Admin can manage roles and permissions. Other users must only access the resources and actions they are authorized to use.
+
+## 5. DASHBOARD
+
+Create a live dashboard based on actual database records.
+
+### Summary cards
+
+- Total students.
+- Active students.
+- New admissions.
+- Total teachers.
+- Total employees.
+- Total classes.
+- Students present today.
+- Students absent today.
+- Monthly fee income.
+- Outstanding student balances.
+- Monthly expenses.
+- Net income.
+- Upcoming examinations.
+- Upcoming events.
+
+### Financial analytics
+
+Display:
+
+- Monthly fee collections.
+- Outstanding fees.
+- Discounts.
+- Expenses.
+- Revenue trends.
+- Income versus expenditure.
+- Fee collection percentage.
+- Previous-period comparisons.
+
+### Academic analytics
+
+Display:
+
+- Student enrollment by class.
+- Enrollment by gender where appropriate.
+- Attendance trends.
+- Examination performance.
+- Pass and failure rates.
+- Top-performing students.
+- Students requiring academic support.
+
+### Dashboard behavior
+
+- Use real aggregated database queries.
+- Support date-range filters.
+- Support academic-year filters.
+- Allow authorized users to open the underlying records.
+- Refresh data after relevant operations.
+- Show meaningful empty states when no records exist.
+
+Do not hardcode dashboard statistics or generate misleading financial data.
+
+## 6. STUDENT MANAGEMENT
+
+Implement a complete student management module.
+
+### Student registration fields
+
+- Unique student ID.
+- Full name.
+- Photograph.
+- Gender.
+- Date of birth.
+- Contact information.
+- Address.
+- Admission date.
+- Academic year.
+- Class and section.
+- Guardian name.
+- Guardian phone.
+- Guardian relationship.
+- Emergency contact.
+- Previous school, if applicable.
+- Medical or accessibility notes with restricted access.
+- Student status.
+- Additional notes.
+
+### Student operations
+
+- Register a student.
+- View complete student profile.
+- Edit student details.
+- Archive or deactivate a student.
+- Search by name or student ID.
+- Filter by class, section, gender, status, and academic year.
+- Import students from CSV.
+- Export authorized student lists.
+- Print student profiles.
+- Generate student ID cards.
+- Generate enrollment certificates.
+- Transfer students between classes.
+- Track enrollment history.
+- View attendance history.
+- View examination results.
+- View fee balances and payment history.
+- View assigned timetable.
+- Record guardian information.
+- Detect duplicate student IDs and other defined duplicates.
+
+### Student profile page
+
+Use organized tabs:
+
+- Overview
+- Personal Information
+- Guardian Information
+- Attendance
+- Examinations
+- Results
+- Fees and Payments
+- Timetable
+- Documents
+- Activity History
+
+Use database relationships rather than storing all student information in one oversized table.
+
+## 7. CLASS, SECTION, AND ACADEMIC MANAGEMENT
+
+Implement:
+
+- Academic years.
+- Terms and semesters.
+- Classes and grades.
+- Sections and groups.
+- Subjects.
+- Class teachers.
+- Subject teachers.
+- Room allocation.
+- Student enrollment.
+- Class promotion.
+- Student transfers.
+- Graduation and completion status.
+- Academic calendars.
+- Holidays.
+- School events.
+
+Prevent invalid assignments, duplicate enrollment, and timetable conflicts.
+
+Provide configurable academic structures instead of assuming every institution follows the same grade system.
+
+## 8. TEACHER MANAGEMENT
+
+Implement:
+
+- Teacher registration.
+- Teacher ID.
+- Profile photograph.
+- Contact details.
+- Qualifications.
+- Specialization.
+- Employment information.
+- Assigned subjects.
+- Assigned classes.
+- Workload management.
+- Attendance.
+- Leave records.
+- Teacher timetable.
+- Performance records.
+- Document management.
+- Teacher profile editing.
+- Teacher activation and deactivation.
+
+Allow administrators to assign teachers to classes and subjects while detecting scheduling conflicts.
+
+## 9. ATTENDANCE MANAGEMENT
+
+Create a functional attendance system for students and staff.
+
+### Attendance features
+
+- Daily attendance.
+- Class-based attendance.
+- Subject-based attendance where enabled.
+- Present, absent, late, and excused statuses.
+- Attendance date selection.
+- Bulk attendance marking.
+- Individual attendance correction.
+- Attendance history.
+- Monthly attendance summaries.
+- Attendance percentage.
+- Absence alerts.
+- Printable attendance registers.
+- CSV and PDF exports.
+- Attendance reports by class, student, and date range.
+
+Prevent duplicate attendance records for the same student, attendance session, and date.
+
+Record the user who created or modified each attendance entry.
+
+Require appropriate permission to edit finalized attendance records.
+
+## 10. EXAMINATION AND RESULTS MANAGEMENT
+
+Implement a complete examination management module.
+
+### Examination setup
+
+- Examination name.
+- Academic year.
+- Term or semester.
+- Examination date.
+- Class.
+- Subject.
+- Maximum marks.
+- Passing marks.
+- Examination status.
+- Assigned teachers.
+
+### Marks management
+
+- Enter marks by class and subject.
+- Support configurable grading systems.
+- Validate marks against maximum marks.
+- Support absent and exempt statuses.
+- Save draft results.
+- Review and approve results.
+- Publish approved results.
+- Correct results through an authorized workflow.
+- Maintain a record of result changes.
+
+### Automatic calculations
+
+Calculate:
+
+- Total marks.
+- Average marks.
+- Percentage.
+- Grade.
+- Pass or fail status.
+- Subject ranking where configured.
+- Overall student ranking where configured.
+
+Allow different subjects to have different maximum marks.
+
+Ensure that percentages, averages, weighted scores, and grade boundaries follow configurable rules.
+
+### Reports
+
+- Individual report cards.
+- Class result sheets.
+- Subject performance reports.
+- Top-performing students.
+- Pass and failure statistics.
+- Grade distribution charts.
+- Printable examination reports.
+- PDF and CSV exports.
+
+Prevent unpublished or unapproved results from being visible to unauthorized users.
+
+## 11. BILLS AND STUDENT FEE MANAGEMENT
+
+Build a complete student billing system.
+
+### Fee configuration
+
+- Fee categories.
+- Monthly tuition fees.
+- Registration fees.
+- Examination fees.
+- Other configurable charges.
+- Class-specific fee structures.
+- Sibling discounts.
+- Scholarships.
+- Authorized fee waivers.
+- Payment schedules.
+- Due dates.
+- Late-payment policies.
+
+### Billing operations
+
+- Generate bills.
+- Generate recurring monthly invoices.
+- View outstanding balances.
+- Record full payments.
+- Record partial payments.
+- Allocate payments to invoices.
+- Record discounts.
+- Track overdue invoices.
+- Issue receipts.
+- Print invoices.
+- Cancel invoices with proper authorization.
+- Reverse erroneous payments through controlled adjustments.
+- View payment history.
+- Filter by class, student, month, status, and academic year.
+
+### Financial integrity
+
+- Assign unique invoice and receipt numbers.
+- Prevent duplicate transactions.
+- Use database transactions for payment operations.
+- Keep an immutable audit trail of financial changes.
+- Never silently delete completed financial transactions.
+- Distinguish billed amounts, paid amounts, discounts, credits, and outstanding balances.
+- Ensure that totals reconcile correctly.
+
+Support configurable currencies, initially USD.
+
+## 12. FINANCIAL MANAGEMENT
+
+Create a dedicated financial module containing:
+
+- Income records.
+- Expense records.
+- Expense categories.
+- Fee collections.
+- Discounts and scholarships.
+- Outstanding balances.
+- Prepayments and account credits.
+- Payment methods.
+- Cash and bank accounts.
+- Financial adjustments.
+- Daily collection summaries.
+- Monthly financial reports.
+- Annual financial reports.
+- Income versus expenditure.
+- Cash-flow summaries.
+- Transaction ledger.
+- Printable financial statements.
+
+Separate tuition income, other income, expenses, liabilities, and student account credits where applicable.
+
+Do not count an invoice as received income until the corresponding payment is recorded under the configured accounting policy.
+
+Reconcile financial reports against transaction records.
+
+Restrict financial records to authorized users.
+
+## 13. HRP — HUMAN RESOURCE MANAGEMENT
+
+Implement an employee and human-resource module.
+
+Features:
+
+- Employee registration.
+- Employee ID.
+- Departments.
+- Job titles.
+- Employment contracts.
+- Salary information.
+- Employee documents.
+- Staff attendance.
+- Leave requests.
+- Leave approval.
+- Employee status.
+- Emergency contacts.
+- Employment history.
+- Salary payments and payroll records.
+- Payroll summaries.
+- Authorized deductions and allowances.
+- Printable payslips.
+- Employee search and filtering.
+
+Separate HR permissions from academic permissions.
+
+Protect salary and personal employee information from unauthorized access.
+
+If payroll is implemented, validate calculations and document the salary rules.
+
+## 14. HR REPORTS
+
+Create reports for:
+
+- Employee lists.
+- Department distribution.
+- Staff attendance.
+- Leave records.
+- Payroll summaries.
+- Salary payments.
+- Employment status.
+- Staff changes over time.
+
+Provide date filters, department filters, printable views, and authorized exports.
+
+## 15. HR SETTINGS
+
+Allow authorized administrators to configure:
+
+- Departments.
+- Job titles.
+- Employment types.
+- Leave categories.
+- Leave approval rules.
+- Salary components.
+- Allowances.
+- Deductions.
+- Payroll periods.
+- HR document categories.
+
+Validate settings before saving changes that affect existing records.
+
+## 16. MESSAGING AND NOTIFICATIONS
+
+Build an internal communication module.
+
+Features:
+
+- Admin-to-teacher messages.
+- Teacher-to-student messages.
+- Parent or guardian notifications where enabled.
+- Individual messages.
+- Group announcements.
+- Class announcements.
+- Message inbox.
+- Sent messages.
+- Read and unread status.
+- Notification history.
+- Email integration through configurable SMTP settings.
+- SMS integration through a configurable provider.
+- Delivery status where supported.
+- Templates for common notifications.
+
+Provide notifications for:
+
+- New admissions.
+- Upcoming examinations.
+- Absences.
+- Unpaid fees.
+- Payment confirmations.
+- Published results.
+- Timetable changes.
+- Important announcements.
+
+SMS and email integrations must use real configured providers. Do not simulate delivery or claim a message was sent when it was not.
+
+## 17. PERFORMANCE MANAGEMENT
+
+Create a configurable performance module.
+
+### Student performance
+
+- Subject marks.
+- Term averages.
+- Academic progress.
+- Attendance correlation.
+- Performance history.
+- Areas requiring improvement.
+- Configurable ranking rules.
+
+### Teacher performance
+
+- Assigned workload.
+- Attendance history.
+- Assigned class results.
+- Review records.
+- Evaluation criteria.
+- Performance reports.
+
+Clearly distinguish objective academic records from subjective evaluations.
+
+Restrict confidential evaluations to authorized users.
+
+## 18. TIMETABLE MANAGEMENT
+
+Create a timetable scheduling module.
+
+Features:
+
+- Academic year and term.
+- Classes and sections.
+- Subjects.
+- Teachers.
+- Classrooms.
+- Days of the week.
+- Start and end times.
+- Breaks.
+- Teacher availability.
+- Classroom availability.
+- Class timetable.
+- Teacher timetable.
+- Printable weekly schedules.
+- Timetable export.
+- Timetable revisions.
+- Schedule publication.
+- Notifications for schedule changes.
+
+Automatically detect:
+
+- Teacher double-booking.
+- Classroom double-booking.
+- Overlapping lessons for the same class.
+- Invalid lesson durations.
+- Conflicts with configured breaks.
+
+Allow authorized administrators to resolve conflicts before publishing a timetable.
+
+## 19. SETTINGS CENTER
+
+Create a fully functional settings area.
+
+### General settings
+
+- Institution name.
+- Institution logo.
+- Institution address.
+- Phone and email.
+- Website.
+- Academic year.
+- Default language.
+- Time zone.
+- Currency.
+- Date format.
+- Number format.
+
+### Appearance settings
+
+- Primary brand color.
+- Secondary brand color.
+- Background color.
+- Logo upload.
+- Favicon.
+- Light and dark mode.
+- Sidebar preferences.
+- Dashboard layout preferences.
+
+Default colors:
+
+Primary: #006B68  
+Secondary: #FFA900  
+White: #FFFFFF  
+Background: #F5F7F7
+
+### User and security settings
+
+- User accounts.
+- Roles.
+- Permissions.
+- Password policies.
+- Session policies.
+- Login history.
+- Audit logs.
+- Account activation.
+- Account deactivation.
+
+### Academic settings
+
+- Academic years.
+- Terms.
+- Grading scales.
+- Attendance statuses.
+- Fee policies.
+- Receipt numbering.
+- Examination rules.
+- Timetable periods.
+
+### System behavior
+
+Settings must be stored persistently in the database and applied throughout the application.
+
+When an authorized administrator changes the logo, colors, institution name, or academic year, the changes must appear in all relevant pages and reports.
+
+Validate uploaded files and restrict settings that could compromise system security.
+
+## 20. USER PROFILE MANAGEMENT
+
+Every authenticated user must have a functional profile page.
+
+Features:
+
+- View profile.
+- Edit permitted personal details.
+- Upload or change profile photograph.
+- Change password.
+- View username and assigned role.
+- View account status.
+- View recent account activity.
+- View login history where authorized.
+- Manage notification preferences.
+- Log out securely.
+
+Do not allow ordinary users to change their own privileged roles or permissions.
+
+Changing passwords must require the current password or a verified password-reset workflow, as appropriate.
+
+Validate uploaded profile photographs and enforce file size and file type limits.
+
+## 21. HELP CENTER
+
+Implement:
+
+- Searchable help articles.
+- Frequently asked questions.
+- User guides.
+- Troubleshooting instructions.
+- Contact-support form.
+- Support ticket creation.
+- Ticket status tracking.
+- Ticket assignment for authorized administrators.
+- Ticket replies and resolution history.
+
+Provide real ticket storage and workflows rather than static sample links.
+
+## 22. REPORTS AND EXPORTS
+
+Create a central reporting center with:
+
+- Student reports.
+- Enrollment reports.
+- Attendance reports.
+- Examination reports.
+- Fee collection reports.
+- Outstanding fee reports.
+- Financial reports.
+- Employee reports.
+- Payroll reports.
+- Timetable reports.
+- User activity reports.
+
+Include:
+
+- Date range.
+- Academic year.
+- Term.
+- Class.
+- Student.
+- Teacher.
+- Status.
+- Relevant module-specific filters.
+
+Provide printable reports and CSV/PDF exports where appropriate.
+
+Exports must respect the current user's permissions and selected filters.
+
+For PDF output, preserve institutional branding, page numbering, tables, and Unicode text.
+
+## 23. FULL CRUD FUNCTIONALITY
+
+Every applicable management module must implement:
+
+- Create.
+- Read.
+- Update.
+- Delete or archive.
+- Search.
+- Filtering.
+- Sorting.
+- Pagination.
+- Input validation.
+- Duplicate detection where applicable.
+- Loading and success states.
+- Error handling.
+- Permission checks.
+- Audit logging.
+
+Use soft deletion or archival for records that must be retained.
+
+Use controlled reversal, cancellation, or adjustment workflows for financial records and published academic records.
+
+Every button, link, menu item, form, filter, chart interaction, and modal must have a defined working behavior.
+
+Do not display controls that are not implemented. If a feature depends on an external service or configuration, display its setup requirements clearly.
+
+## 24. DATABASE DESIGN
+
+Design a normalized relational database with appropriate primary keys, foreign keys, indexes, unique constraints, and timestamps.
+
+Include tables or equivalent models for:
+
+- Users.
+- Roles.
+- Permissions.
+- User-role assignments.
+- Role-permission assignments.
+- Student profiles.
+- Guardians.
+- Teachers.
+- Employees.
+- Departments.
+- Academic years.
+- Terms.
+- Classes.
+- Sections.
+- Subjects.
+- Enrollments.
+- Attendance.
+- Examinations.
+- Examination subjects.
+- Student marks.
+- Grading scales.
+- Fee structures.
+- Invoices.
+- Invoice items.
+- Payments.
+- Payment allocations.
+- Discounts.
+- Student credits and prepayments.
+- Expenses.
+- Income transactions.
+- Payroll.
+- Leave requests.
+- Timetables.
+- Messages.
+- Notifications.
+- Support tickets.
+- System settings.
+- Uploaded documents.
+- Audit logs.
+
+Avoid duplicate storage of calculated values unless required for performance and maintained consistently.
+
+Use migrations or a versioned SQL schema.
+
+Include realistic demonstration data clearly marked as sample data. Do not mix sample transactions with genuine financial records.
+
+## 25. SECURITY AND DATA PROTECTION
+
+Implement:
+
+- Server-side validation.
+- PDO prepared statements.
+- Protection against SQL injection.
+- Context-appropriate output escaping.
+- CSRF protection.
+- Secure password hashing.
+- Role and permission enforcement.
+- Secure session cookies.
+- Session regeneration after login.
+- Login rate limiting.
+- Secure file uploads.
+- MIME type and extension validation.
+- File size restrictions.
+- Restricted access to private documents.
+- Audit logging.
+- Safe error messages.
+- Environment-based configuration.
+- Protection against unauthorized record access.
+
+Use transactions for operations that must succeed or fail together.
+
+Do not expose database credentials, private configuration files, password hashes, or stack traces to ordinary users.
+
+Implement appropriate privacy controls for student and employee records.
+
+Provide a documented backup and restoration procedure.
+
+## 26. PROJECT STRUCTURE AND DELIVERABLES
+
+Produce a complete runnable project, not disconnected code snippets.
+
+Include:
+
+- Application source code.
+- Database schema or SQL installation file.
+- Database connection configuration example.
+- Authentication and authorization.
+- All module pages.
+- Backend controllers and services.
+- Models or repositories.
+- Reusable UI components.
+- CSS and JavaScript assets.
+- File upload handling.
+- Validation and error handling.
+- Database migrations or installation scripts.
+- Sample data.
+- README.md.
+- XAMPP installation instructions.
+- Database setup instructions.
+- Default development-account setup procedure.
+- Production deployment instructions.
+- Backup and restoration instructions.
+- Basic automated tests.
+
+Never embed real passwords or production database credentials in source code.
+
+If providing a development administrator account, create it through a secure installation or seeding process and require a password change before real-world deployment.
+
+## 27. TESTING AND ACCEPTANCE CRITERIA
+
+Before declaring the project complete, test the following.
+
+### Authentication
+
+- Login succeeds with valid credentials.
+- Invalid credentials are rejected.
+- Logout invalidates the session.
+- Unauthorized routes are blocked.
+- Password changes work securely.
+
+### CRUD operations
+
+- Records can be created.
+- Records can be viewed.
+- Records can be edited.
+- Authorized deletion or archival works.
+- Validation errors are understandable.
+- Search, filtering, sorting, and pagination work.
+
+### Student and academic workflows
+
+- Student registration persists in the database.
+- Class assignments are valid.
+- Attendance can be marked and retrieved.
+- Examination marks are validated.
+- Results calculate correctly.
+- Published report cards display correct data.
+
+### Financial workflows
+
+- Invoices calculate correctly.
+- Full and partial payments work.
+- Outstanding balances update correctly.
+- Discounts are applied consistently.
+- Duplicate payments are prevented.
+- Reports reconcile with stored transactions.
+
+### System administration
+
+- Settings persist after refresh and login.
+- Logo and brand color changes appear consistently.
+- Role permissions are enforced on the backend.
+- User profiles can be edited within authorized limits.
+- Reports export the selected data.
+- Audit logs record sensitive operations.
+
+### Technical quality
+
+- No dead buttons.
+- No broken internal links.
+- No missing database tables.
+- No fatal PHP errors.
+- No silent failures.
+- No hardcoded dashboard statistics.
+- No unauthorized access to protected records.
+- No misleading success messages.
+- No critical browser console errors.
+
+Run tests and fix identified defects before marking the project complete. Clearly disclose any unimplemented or untested functionality.
+
+## 28. IMPLEMENTATION STRATEGY
+
+Build the application in the following order:
+
+Phase 1: Inspect the existing project and establish the application architecture.
+
+Phase 2: Create the database schema, migrations, and installation process.
+
+Phase 3: Implement authentication, roles, permissions, and audit logging.
+
+Phase 4: Build the global layout, navigation, branding, and dashboard.
+
+Phase 5: Implement students, classes, subjects, teachers, and academic years.
+
+Phase 6: Implement attendance, examinations, marks, and report cards.
+
+Phase 7: Implement bills, payments, financial management, and reconciliation.
+
+Phase 8: Implement HR, payroll, timetable, messages, and notifications.
+
+Phase 9: Implement settings, profiles, reports, and the Help Center.
+
+Phase 10: Test the complete workflows, correct errors, document installation, and prepare the final runnable project.
+
+Keep the application usable at every completed phase.
+
+If operating inside an existing coding environment, inspect the current files first, preserve working features, and make changes directly to the project where possible. Do not repeatedly replace working files with incomplete mockups.
+
+If the project is too large to complete in one generation, continue in clearly defined phases, track completed and remaining tasks, and do not claim that the application is finished until the required workflows are implemented and tested.
+
+## FINAL INSTRUCTION
+
+Build a professional, secure, maintainable, fully functional School Management System for Machadka Khadiija Bintu Khuwaylid – Qardho.
+
+Use SEC LMS as a reference for administrative organization, but deliver an original application with the requested brand identity, complete database integration, real CRUD operations, configurable settings, editable profiles, secure permissions, meaningful reports, and working end-to-end workflows.
+
+Prioritize correctness, data integrity, security, usability, and actual functionality over visual appearance alone.
+
+Begin by inspecting the existing environment, establishing the database architecture, and building the working foundation. Then implement and test each module until the complete application is ready to run locally on XAMPP and can be prepared for production deployment.

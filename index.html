@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Machadka Khadiija Bintu Khuwaylid – Qardho | School Management System</title>
+    <meta name="description" content="Comprehensive School Management System for Machadka Khadiija Bintu Khuwaylid – Qardho, featuring student records, academics, examinations, fee billing, payroll, timetable, and reporting." />
+    <meta property="og:title" content="Machadka Khadiija Bintu Khuwaylid – Qardho | School Management System" />
+    <meta property="og:description" content="Comprehensive School Management System for Machadka Khadiija Bintu Khuwaylid – Qardho, featuring student records, academics, examinations, fee billing, payroll, timetable, and reporting." />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <script>
+      // Browser Extension Compatibility Shim:
+      // Prevents "TypeError: Cannot set property fetch of #<Window> which has only a getter"
+      // when third-party extensions (request interceptors/downloaders) attempt assignment to window.fetch.
+      (function() {
+        try {
+          var originalFetch = typeof window !== 'undefined' && typeof window.fetch === 'function'
+            ? window.fetch.bind(window)
+            : null;
+          var activeFetch = originalFetch;
+
+          Object.defineProperty(window, 'fetch', {
+            get: function() {
+              return activeFetch;
+            },
+            set: function(newFetch) {
+              activeFetch = newFetch;
+            },
+            configurable: true,
+            enumerable: true
+          });
+        } catch (e) {
+          // If defineProperty cannot be invoked, allow native fallback
+        }
+
+        // Suppress unhandled errors originating from external browser extensions
+        window.addEventListener('error', function(event) {
+          if (
+            (event.filename && event.filename.indexOf('chrome-extension://') !== -1) ||
+            (event.message && event.message.indexOf('fetch of #<Window>') !== -1)
+          ) {
+            event.preventDefault();
+            event.stopImmediatePropagation();
+            return true;
+          }
+        }, true);
+
+        window.addEventListener('unhandledrejection', function(event) {
+          var reason = event.reason;
+          if (
+            reason &&
+            ((typeof reason === 'string' && (reason.indexOf('chrome-extension://') !== -1 || reason.indexOf('fetch of #<Window>') !== -1)) ||
+             (reason.message && reason.message.indexOf('fetch of #<Window>') !== -1) ||
+             (reason.stack && reason.stack.indexOf('chrome-extension://') !== -1))
+          ) {
+            event.preventDefault();
+            event.stopImmediatePropagation();
+          }
+        }, true);
+      })();
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
+
